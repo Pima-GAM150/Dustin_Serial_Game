@@ -7,6 +7,7 @@ using System;
 [Serializable]
 public class PlayerStats
 {
-
-	
+    public PlayerInventory inventory;
+    public int Health;
+    public int Damage;
 }

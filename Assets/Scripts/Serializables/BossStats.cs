@@ -7,6 +7,7 @@ using System;
 [Serializable]
 public class BossStats
 {
-
+    public int Health;
+    public int Damage;
 	
 }
