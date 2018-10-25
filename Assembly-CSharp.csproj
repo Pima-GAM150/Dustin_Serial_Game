@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Boss scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\DamageModifier.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\HealthModifier.cs" />
     <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\DamageBoost.cs" />
@@ -74,15 +76,21 @@
     <Compile Include="Assets\Scripts\Items\Weapons\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Manager\Manager.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\PickUpItem.cs" />
     <Compile Include="Assets\Scripts\Player scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\SwitchWeapon.cs" />
     <Compile Include="Assets\Scripts\Serializables\BossStats.cs" />
     <Compile Include="Assets\Scripts\Serializables\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Serializables\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\HealthBarUpdater.cs" />
     <Compile Include="Assets\Scripts\UI scripts\MainMenuJumper.cs" />
     <Compile Include="Assets\Scripts\UI scripts\MenuOnButtonPress.cs" />
     <Compile Include="Assets\Scripts\UI scripts\Reset.cs" />
     <Compile Include="Assets\Scripts\UI scripts\SaveAndQuit.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\Starter.cs" />
     <Compile Include="Assets\Scripts\UI scripts\Timer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

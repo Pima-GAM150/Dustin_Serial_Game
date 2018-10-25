@@ -7,6 +7,5 @@ using System;
 [Serializable]
 public class PlayerInventory
 {
-
-	
+    public List<Weapon> weapons; 
 }
