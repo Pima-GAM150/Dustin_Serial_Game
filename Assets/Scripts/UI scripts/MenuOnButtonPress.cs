@@ -5,17 +5,18 @@ using UnityEngine;
 public class MenuOnButtonPress : MonoBehaviour
 {
     public GameObject Menu;
+
     private void Update()
     {
         if(Input.GetAxis("Cancel") == 1 && !Menu.activeInHierarchy)
         {
             Menu.SetActive(true);
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
     }
     public void UnPause()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         Menu.SetActive(false);
     }
 

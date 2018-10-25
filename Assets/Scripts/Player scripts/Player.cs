@@ -27,7 +27,7 @@ public class Player : Character , IDamageable
        // equip weapons here
     }
 
-    public void LoadStats()
+    public override void LoadStats()
     {
         Manager = FindObjectOfType<ManagerS>();
         stats = Manager.PlayerData;
@@ -39,7 +39,7 @@ public class Player : Character , IDamageable
         EquipedWeapon = stats.Weapon;
     }
 
-    public void SaveStats()
+    public override void SaveStats()
     {
         Manager = FindObjectOfType<ManagerS>();
 
@@ -49,16 +49,6 @@ public class Player : Character , IDamageable
         stats.Weapon = EquipedWeapon;
 
         Manager.PlayerData = stats;
-    }
-
-    public void ChangeHealth(float factor)
-    {
-        Health += factor;
-    }
-
-    public void ChangeDamage(float factor)
-    {
-        Damage += factor;
     }
 
     public void ChangeSpeed(float factor)

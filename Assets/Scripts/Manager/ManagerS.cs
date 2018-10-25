@@ -5,8 +5,8 @@ using UnityEngine;
 public class ManagerS : MonoBehaviour
 {
     public static ManagerS Manager = null;
-    public PlayerStats PlayerData;
-    public BossStats BossData;
+    [HideInInspector]public PlayerStats PlayerData;
+    [HideInInspector]public BossStats BossData;
 
     private void Awake()
     {
@@ -26,8 +26,11 @@ public class ManagerS : MonoBehaviour
         Player player = FindObjectOfType<Player>();
         Boss boss = FindObjectOfType<Boss>();
 
+
         if (player != null && boss != null)
         {
+            player.SaveStats();
+            boss.SaveStats();
             PlayerData = player.stats;
             BossData = boss.stats;
         }
@@ -42,7 +45,12 @@ public class ManagerS : MonoBehaviour
         {
             player.stats = PlayerData;
             boss.stats = BossData;
+
+            player.LoadStats();
+            boss.LoadStats();
         }
     }
+
+    
 
 }

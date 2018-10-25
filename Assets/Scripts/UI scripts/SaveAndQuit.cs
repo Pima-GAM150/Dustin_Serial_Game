@@ -14,38 +14,30 @@ public class SaveAndQuit : MonoBehaviour
 
     public void Save()
     {
-        PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
-        PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
-
-        FileStream playerFile = new FileStream(PathForSavedPlayer,FileMode.OpenOrCreate,FileAccess.ReadWrite);
-        FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-
-        Manager= FindObjectOfType<ManagerS>();
-
+        Manager = FindObjectOfType<ManagerS>();
+        string bossJson = string.Empty, playerJson = string.Empty;
         if(Manager!=null)
         {
             Manager.SaveStats();
 
-            string playerJson = JsonUtility.ToJson(Manager.PlayerData);
-            string bossJson = JsonUtility.ToJson(Manager.BossData);
-
-            File.WriteAllText(PathForSavedPlayer, playerJson);
-            File.WriteAllText(PathForSavedBoss, bossJson);
+            playerJson = JsonUtility.ToJson(Manager.PlayerData);
+            bossJson = JsonUtility.ToJson(Manager.BossData);
         }
 
-        playerFile.Close();
-        bossFile.Close();
+        PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
+        PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
+        
 
+        File.WriteAllText(PathForSavedPlayer, playerJson);
+        File.WriteAllText(PathForSavedBoss,bossJson);
+        
     }
 
     public void Load()
     {
         PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
         PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
-
-        FileStream playerFile = new FileStream(PathForSavedPlayer, FileMode.Open);
-        FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.Open);
-
+        
         Manager = FindObjectOfType<ManagerS>();
 
         string playerJson = File.ReadAllText(PathForSavedPlayer);
@@ -53,33 +45,24 @@ public class SaveAndQuit : MonoBehaviour
 
         Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
         Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
-
-        Manager.LoadStats();
-
-        playerFile.Close();
-        bossFile.Close();
+        
     }
 
     public void ResetStats()
     {
         PathForInitialPlayer = Application.streamingAssetsPath + "/InitialPlayerStats.json";
         PathForInitialBoss = Application.streamingAssetsPath + "/InitialBossStats.json";
-
-        FileStream playerFile = new FileStream(PathForInitialPlayer, FileMode.Open);
-        FileStream bossFile = new FileStream(PathForInitialBoss, FileMode.Open);
+        
 
         Manager = FindObjectOfType<ManagerS>();
 
-        string playerJson = File.ReadAllText(PathForSavedPlayer);
-        string bossJson = File.ReadAllText(PathForSavedBoss);
+        string playerJson = File.ReadAllText(PathForInitialPlayer);
+        string bossJson = File.ReadAllText(PathForInitialBoss);
 
         Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
         Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
 
         Manager.LoadStats();
-
-        playerFile.Close();
-        bossFile.Close();
     }
 
     public void Quit()

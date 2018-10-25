@@ -17,7 +17,7 @@ public class Boss : Character, IDamageable
         Health -= damage;
     }
 
-    public void LoadStats()
+    public override void LoadStats()
     {
         Manager = FindObjectOfType<ManagerS>();
         stats = Manager.BossData;
@@ -27,7 +27,7 @@ public class Boss : Character, IDamageable
         MaxHealth = stats.MaxHealth;
     }
 
-    public void SaveStats()
+    public override void SaveStats()
     {
         Manager = FindObjectOfType<ManagerS>();
 
@@ -35,16 +35,6 @@ public class Boss : Character, IDamageable
         stats.Damage = Damage;
 
         Manager.BossData = stats;
-    }
-
-    public void ChangeHealth(float factor)
-    {
-        Health += factor;
-    }
-
-    public void ChangeDamage(float factor)
-    {
-        Damage += factor;
     }
 
     private void OnCollisionEnter(Collision collision)

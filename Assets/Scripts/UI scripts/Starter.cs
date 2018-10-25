@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class Starter : MonoBehaviour
 {
     
-  /*  void LoadGame()
+    void LoadGame()
     {
         SaveAndQuit loader = FindObjectOfType<SaveAndQuit>();
-        Manager mgr = FindObjectOfType<Manager>();
 
         loader.Load();
 
     }
-  */
+  
     public void StartGame()
     {
-       // LoadGame();
+        LoadGame();
+
         SceneManager.LoadScene(1);
     }
 }
