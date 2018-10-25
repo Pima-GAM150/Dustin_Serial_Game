@@ -72,6 +72,8 @@
     <Compile Include="Assets\Scripts\Items\PowerUps\Health.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\SpeedBoost.cs" />
+    <Compile Include="Assets\Scripts\Items\Spawning\PowerUpSpawn.cs" />
+    <Compile Include="Assets\Scripts\Items\Spawning\WeaponSpawn.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Ax.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />
