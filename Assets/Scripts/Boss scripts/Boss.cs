@@ -2,65 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour, IDamageable
+public class Boss : Character, IDamageable
 {
     [HideInInspector]public BossStats stats;
-    [HideInInspector] public static Boss boss;
+    [HideInInspector]ManagerS Manager;
 
-    private void Awake()
+    private void Start()
     {
-        if (boss == null)
-        {
-            boss = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (boss != this)
-        {
-            Destroy(gameObject);
-        }
-
-
+        LoadStats();
     }
 
-    public int Health;
-    public int Damage;
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         Health -= damage;
     }
 
-    public void LoadStats()
+    public override void LoadStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+        stats = Manager.BossData;
+
         Health = stats.Health;
         Damage = stats.Damage;
+        MaxHealth = stats.MaxHealth;
     }
 
-    public void SaveStats()
+    public override void SaveStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+
         stats.Health = Health;
         stats.Damage = Damage;
-    }
 
-    public void ChangeHealth(int factor)
-    {
-        Health += factor;
-    }
-
-    public void ChangeDamage(int factor)
-    {
-        Damage += factor;
+        Manager.BossData = stats;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            IDamageable player = collision.gameObject.GetComponent<IDamageable>();
-
-            player.TakeDamage(Damage);
-        }
-        else if (collision.gameObject.layer == 9)
+        
+        if (collision.gameObject.layer == 9)
         {
             if(collision.gameObject.tag == "Health")
             {

@@ -8,7 +8,8 @@ using System;
 public class PlayerStats
 {
     public PlayerInventory inventory;
-    public int Health;
-    public int Damage;
+    public float Health;
+    public float MaxHealth;
+    public float Damage;
     public GameObject Weapon;
 }

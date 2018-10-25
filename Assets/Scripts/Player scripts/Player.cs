@@ -2,31 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour , IDamageable
+public class Player : Character , IDamageable
 {
     [HideInInspector]public PlayerStats stats;
-    [HideInInspector]public static Player player;
 
-    private void Awake()
-    {
-        if (player == null)
-        {
-            player = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (player != this)
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public PlayerInventory Inventory;
-    public int Health;
-    public int Damage;
     public GameObject EquipedWeapon;
 
+    [HideInInspector]ManagerS Manager;
 
-    public void TakeDamage(int damage)
+    private void Start()
+    {
+        LoadStats();
+    }
+
+    public void TakeDamage(float damage)
     {
         Health -= damage;
     }
@@ -36,33 +27,31 @@ public class Player : MonoBehaviour , IDamageable
        // equip weapons here
     }
 
-    public void LoadStats()
+    public override void LoadStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+        stats = Manager.PlayerData;
+
         Inventory = stats.inventory;
         Health = stats.Health;
+        MaxHealth = stats.MaxHealth;
         Damage = stats.Damage;
         EquipedWeapon = stats.Weapon;
     }
 
-    public void SaveStats()
+    public override void SaveStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+
         stats.inventory = Inventory;
         stats.Health = Health;
         stats.Damage = Damage;
         stats.Weapon = EquipedWeapon;
+
+        Manager.PlayerData = stats;
     }
 
-    public void ChangeHealth(int factor)
-    {
-        Health += factor;
-    }
-
-    public void ChangeDamage(int factor)
-    {
-        Damage += factor;
-    }
-
-    public void ChangeSpeed(int factor)
+    public void ChangeSpeed(float factor)
     {
         PlayerController pc = FindObjectOfType<PlayerController>();
 
