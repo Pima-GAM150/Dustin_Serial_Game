@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{FE69DCBF-A31B-E93A-2545-77F73EE07707}</ProjectGuid>
+    <ProjectGuid>{5319E711-E003-9E50-7302-AB534BB458C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,18 +61,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\Boss.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\DamageModifier.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\HealthModifier.cs" />
+    <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
+    <Compile Include="Assets\Scripts\Items\PowerUps\DamageBoost.cs" />
+    <Compile Include="Assets\Scripts\Items\PowerUps\Health.cs" />
+    <Compile Include="Assets\Scripts\Items\PowerUps\PowerUp.cs" />
+    <Compile Include="Assets\Scripts\Items\PowerUps\SpeedBoost.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\Ax.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\Bow.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\CardDeck.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Manager\Manager.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\PickUpItem.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\SwitchWeapon.cs" />
+    <Compile Include="Assets\Scripts\Serializables\BossStats.cs" />
+    <Compile Include="Assets\Scripts\Serializables\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Serializables\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\HealthBarUpdater.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\MainMenuJumper.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\MenuOnButtonPress.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\Reset.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\SaveAndQuit.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\Starter.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\Timer.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/unitygames/Dustin_Serialized_Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/unitygames/Dustin_Serialized_Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/unitygames/Dustin_Serialized_Game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/unitygames/Dustin_Serialized_Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files (x86)/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
