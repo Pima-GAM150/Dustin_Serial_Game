@@ -10,8 +10,7 @@ public class SaveAndQuit : MonoBehaviour
     private string PathForSavedPlayer;
     private string PathForSavedBoss;
 
-    Player player;
-    Boss boss;
+    ManagerS Manager;
 
     public void Save()
     {
@@ -21,16 +20,14 @@ public class SaveAndQuit : MonoBehaviour
         FileStream playerFile = new FileStream(PathForSavedPlayer,FileMode.OpenOrCreate,FileAccess.ReadWrite);
         FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
-        player = FindObjectOfType<Player>();
-        boss = FindObjectOfType<Boss>();
+        Manager= FindObjectOfType<ManagerS>();
 
-        if(player!=null &&boss!= null)
+        if(Manager!=null)
         {
-            player.SaveStats();
-            boss.SaveStats();
+            Manager.SaveStats();
 
-            string playerJson = JsonUtility.ToJson(player.stats);
-            string bossJson = JsonUtility.ToJson(boss.stats);
+            string playerJson = JsonUtility.ToJson(Manager.PlayerData);
+            string bossJson = JsonUtility.ToJson(Manager.BossData);
 
             File.WriteAllText(PathForSavedPlayer, playerJson);
             File.WriteAllText(PathForSavedBoss, bossJson);
@@ -49,17 +46,15 @@ public class SaveAndQuit : MonoBehaviour
         FileStream playerFile = new FileStream(PathForSavedPlayer, FileMode.Open);
         FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.Open);
 
-        player = FindObjectOfType<Player>();
-        boss = FindObjectOfType<Boss>();
+        Manager = FindObjectOfType<ManagerS>();
 
         string playerJson = File.ReadAllText(PathForSavedPlayer);
         string bossJson = File.ReadAllText(PathForSavedBoss);
 
-        player.stats = JsonUtility.FromJson<PlayerStats>(playerJson);
-        boss.stats = JsonUtility.FromJson<BossStats>(bossJson);
+        Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
+        Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
 
-        player.LoadStats();
-        boss.LoadStats();
+        Manager.LoadStats();
 
         playerFile.Close();
         bossFile.Close();
@@ -73,17 +68,15 @@ public class SaveAndQuit : MonoBehaviour
         FileStream playerFile = new FileStream(PathForInitialPlayer, FileMode.Open);
         FileStream bossFile = new FileStream(PathForInitialBoss, FileMode.Open);
 
-        player = FindObjectOfType<Player>();
-        boss = FindObjectOfType<Boss>();
+        Manager = FindObjectOfType<ManagerS>();
 
         string playerJson = File.ReadAllText(PathForSavedPlayer);
         string bossJson = File.ReadAllText(PathForSavedBoss);
 
-        player.stats = JsonUtility.FromJson<PlayerStats>(playerJson);
-        boss.stats = JsonUtility.FromJson<BossStats>(bossJson);
+        Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
+        Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
 
-        player.LoadStats();
-        boss.LoadStats();
+        Manager.LoadStats();
 
         playerFile.Close();
         bossFile.Close();

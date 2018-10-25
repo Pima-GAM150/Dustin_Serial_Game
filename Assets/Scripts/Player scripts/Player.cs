@@ -5,24 +5,17 @@ using UnityEngine;
 public class Player : Character , IDamageable
 {
     [HideInInspector]public PlayerStats stats;
-    [HideInInspector]public static Player player;
 
-    private void Awake()
-    {
-        if (player == null)
-        {
-            player = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (player != this)
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public PlayerInventory Inventory;
     public GameObject EquipedWeapon;
 
+    [HideInInspector]ManagerS Manager;
+
+    private void Start()
+    {
+        LoadStats();
+    }
 
     public void TakeDamage(float damage)
     {
@@ -36,6 +29,9 @@ public class Player : Character , IDamageable
 
     public void LoadStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+        stats = Manager.PlayerData;
+
         Inventory = stats.inventory;
         Health = stats.Health;
         MaxHealth = stats.MaxHealth;
@@ -45,10 +41,14 @@ public class Player : Character , IDamageable
 
     public void SaveStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+
         stats.inventory = Inventory;
         stats.Health = Health;
         stats.Damage = Damage;
         stats.Weapon = EquipedWeapon;
+
+        Manager.PlayerData = stats;
     }
 
     public void ChangeHealth(float factor)

@@ -10,7 +10,13 @@ public class MenuOnButtonPress : MonoBehaviour
         if(Input.GetAxis("Cancel") == 1 && !Menu.activeInHierarchy)
         {
             Menu.SetActive(true);
-
+            Time.timeScale = 0;
         }
     }
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        Menu.SetActive(false);
+    }
+
 }

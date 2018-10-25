@@ -5,24 +5,12 @@ using UnityEngine;
 public class Boss : Character, IDamageable
 {
     [HideInInspector]public BossStats stats;
-    [HideInInspector] public static Boss boss;
+    [HideInInspector]ManagerS Manager;
 
-    private void Awake()
+    private void Start()
     {
-        if (boss == null)
-        {
-            boss = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (boss != this)
-        {
-            Destroy(gameObject);
-        }
-
-
+        LoadStats();
     }
-
-    
 
     public void TakeDamage(float damage)
     {
@@ -31,6 +19,9 @@ public class Boss : Character, IDamageable
 
     public void LoadStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+        stats = Manager.BossData;
+
         Health = stats.Health;
         Damage = stats.Damage;
         MaxHealth = stats.MaxHealth;
@@ -38,8 +29,12 @@ public class Boss : Character, IDamageable
 
     public void SaveStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+
         stats.Health = Health;
         stats.Damage = Damage;
+
+        Manager.BossData = stats;
     }
 
     public void ChangeHealth(float factor)
