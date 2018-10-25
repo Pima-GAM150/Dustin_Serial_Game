@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\DamageModifier.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\HealthModifier.cs" />
+    <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\DamageBoost.cs" />

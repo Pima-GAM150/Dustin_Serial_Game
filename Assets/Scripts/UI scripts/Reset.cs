@@ -6,7 +6,8 @@ public class Reset : MonoBehaviour
 {
     public void ResetGame()
     {
-        //load initial game settings from .json file
-        //that is premade and not edited by game.
+        SaveAndQuit sq = FindObjectOfType<SaveAndQuit>();
+
+        sq.ResetStats();
     }
 }

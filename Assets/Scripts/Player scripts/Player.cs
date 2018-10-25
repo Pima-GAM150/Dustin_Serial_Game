@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour , IDamageable
+public class Player : Character , IDamageable
 {
     [HideInInspector]public PlayerStats stats;
     [HideInInspector]public static Player player;
@@ -21,12 +21,10 @@ public class Player : MonoBehaviour , IDamageable
     }
 
     public PlayerInventory Inventory;
-    public int Health;
-    public int Damage;
     public GameObject EquipedWeapon;
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         Health -= damage;
     }
@@ -40,6 +38,7 @@ public class Player : MonoBehaviour , IDamageable
     {
         Inventory = stats.inventory;
         Health = stats.Health;
+        MaxHealth = stats.MaxHealth;
         Damage = stats.Damage;
         EquipedWeapon = stats.Weapon;
     }
@@ -52,17 +51,17 @@ public class Player : MonoBehaviour , IDamageable
         stats.Weapon = EquipedWeapon;
     }
 
-    public void ChangeHealth(int factor)
+    public void ChangeHealth(float factor)
     {
         Health += factor;
     }
 
-    public void ChangeDamage(int factor)
+    public void ChangeDamage(float factor)
     {
         Damage += factor;
     }
 
-    public void ChangeSpeed(int factor)
+    public void ChangeSpeed(float factor)
     {
         PlayerController pc = FindObjectOfType<PlayerController>();
 

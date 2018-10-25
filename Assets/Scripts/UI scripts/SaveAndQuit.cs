@@ -18,11 +18,12 @@ public class SaveAndQuit : MonoBehaviour
         PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
         PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
 
-        FileStream playerFile = new FileStream(PathForSavedPlayer,FileMode.OpenOrCreate);
-        FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.OpenOrCreate);
+        FileStream playerFile = new FileStream(PathForSavedPlayer,FileMode.OpenOrCreate,FileAccess.ReadWrite);
+        FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
         player = FindObjectOfType<Player>();
         boss = FindObjectOfType<Boss>();
+
         if(player!=null &&boss!= null)
         {
             player.SaveStats();

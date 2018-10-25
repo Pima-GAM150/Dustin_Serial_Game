@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
         {
             IDamageable boss = collision.gameObject.GetComponent<IDamageable>();
             Weapon w = player.EquipedWeapon.GetComponent<Weapon>();
-            int weaponModifier = w.Damage;
+            float weaponModifier = w.Damage;
             boss.TakeDamage(player.Damage + weaponModifier);
         }
     }

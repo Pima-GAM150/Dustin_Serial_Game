@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 114965348797033976}
   - component: {fileID: 54557811746667306}
   - component: {fileID: 65040035885879964}
-  - component: {fileID: 114075696274597836}
   - component: {fileID: 114311582240291986}
   - component: {fileID: 114456013137096310}
+  - component: {fileID: 114658029077933898}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -208,17 +208,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483053362134316}
   m_Enabled: 1
---- !u!114 &114075696274597836
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849855321983780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec7919145a043b409b68173b60e5d74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114311582240291986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2926cecff56523040a513fb8d130fc90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 0
 --- !u!114 &114456013137096310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,6 +231,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99245e728b56b8489bd9a7987f7ee7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114658029077933898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849855321983780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec7919145a043b409b68173b60e5d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 114819345631393322}
+  HealthBar: {fileID: 0}
 --- !u!114 &114819345631393322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -252,17 +255,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8ed553f6eb8254292bb9d36e57a2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
+  MaxHealth: 100
+  Damage: 10
   stats:
     inventory:
       weapons: []
     Health: 0
+    MaxHealth: 0
     Damage: 0
+    Weapon: {fileID: 0}
   Inventory:
-    weapons:
-    - {fileID: 0}
-  Health: 100
-  Damage: 10
-  EquipedWeaopn: {fileID: 0}
+    weapons: []
+  EquipedWeapon: {fileID: 0}
 --- !u!114 &114965348797033976
 MonoBehaviour:
   m_ObjectHideFlags: 1
