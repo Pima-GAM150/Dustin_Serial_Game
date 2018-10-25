@@ -10,83 +10,59 @@ public class SaveAndQuit : MonoBehaviour
     private string PathForSavedPlayer;
     private string PathForSavedBoss;
 
-    Player player;
-    Boss boss;
+    ManagerS Manager;
 
     public void Save()
     {
-        PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
-        PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
-
-        FileStream playerFile = new FileStream(PathForSavedPlayer,FileMode.OpenOrCreate,FileAccess.ReadWrite);
-        FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-
-        player = FindObjectOfType<Player>();
-        boss = FindObjectOfType<Boss>();
-
-        if(player!=null &&boss!= null)
+        Manager = FindObjectOfType<ManagerS>();
+        string bossJson = string.Empty, playerJson = string.Empty;
+        if(Manager!=null)
         {
-            player.SaveStats();
-            boss.SaveStats();
+            Manager.SaveStats();
 
-            string playerJson = JsonUtility.ToJson(player.stats);
-            string bossJson = JsonUtility.ToJson(boss.stats);
-
-            File.WriteAllText(PathForSavedPlayer, playerJson);
-            File.WriteAllText(PathForSavedBoss, bossJson);
+            playerJson = JsonUtility.ToJson(Manager.PlayerData);
+            bossJson = JsonUtility.ToJson(Manager.BossData);
         }
 
-        playerFile.Close();
-        bossFile.Close();
+        PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
+        PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
+        
 
+        File.WriteAllText(PathForSavedPlayer, playerJson);
+        File.WriteAllText(PathForSavedBoss,bossJson);
+        
     }
 
     public void Load()
     {
         PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
         PathForSavedBoss = Application.streamingAssetsPath + "/SavedBossStats.json";
-
-        FileStream playerFile = new FileStream(PathForSavedPlayer, FileMode.Open);
-        FileStream bossFile = new FileStream(PathForSavedBoss, FileMode.Open);
-
-        player = FindObjectOfType<Player>();
-        boss = FindObjectOfType<Boss>();
+        
+        Manager = FindObjectOfType<ManagerS>();
 
         string playerJson = File.ReadAllText(PathForSavedPlayer);
         string bossJson = File.ReadAllText(PathForSavedBoss);
 
-        player.stats = JsonUtility.FromJson<PlayerStats>(playerJson);
-        boss.stats = JsonUtility.FromJson<BossStats>(bossJson);
-
-        player.LoadStats();
-        boss.LoadStats();
-
-        playerFile.Close();
-        bossFile.Close();
+        Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
+        Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
+        
     }
 
     public void ResetStats()
     {
         PathForInitialPlayer = Application.streamingAssetsPath + "/InitialPlayerStats.json";
         PathForInitialBoss = Application.streamingAssetsPath + "/InitialBossStats.json";
+        
 
-        FileStream playerFile = new FileStream(PathForInitialPlayer, FileMode.Open);
-        FileStream bossFile = new FileStream(PathForInitialBoss, FileMode.Open);
+        Manager = FindObjectOfType<ManagerS>();
 
-        player = FindObjectOfType<Player>();
-        boss = FindObjectOfType<Boss>();
+        string playerJson = File.ReadAllText(PathForInitialPlayer);
+        string bossJson = File.ReadAllText(PathForInitialBoss);
 
-        string playerJson = File.ReadAllText(PathForSavedPlayer);
-        string bossJson = File.ReadAllText(PathForSavedBoss);
+        Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
+        Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
 
-        player.stats = JsonUtility.FromJson<PlayerStats>(playerJson);
-        boss.stats = JsonUtility.FromJson<BossStats>(bossJson);
-
-        player.LoadStats();
-        boss.LoadStats();
-
-        playerFile.Close();
-        bossFile.Close();
+        Manager.LoadStats();
     }
 
     public void Quit()
