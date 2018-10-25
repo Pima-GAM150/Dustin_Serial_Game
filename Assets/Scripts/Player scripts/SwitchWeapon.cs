@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour
 {
-    List<Weapon> weapons;
+    List<GameObject> weapons;
     Player player;
 
     private void Start()
@@ -24,10 +24,10 @@ public class SwitchWeapon : MonoBehaviour
     {
         for (int i = 0; i < weapons.Capacity; i++)
         {
-            Weapon w = player.Inventory.weapons[i];
-            if (player.EquipedWeaopn == w)
+            GameObject w = player.Inventory.weapons[i];
+            if (player.EquipedWeapon == w)
             {
-                player.EquipedWeaopn = player.Inventory.weapons[i + 1];
+                player.EquipedWeapon = player.Inventory.weapons[i + 1];
                 return;
             }
         }

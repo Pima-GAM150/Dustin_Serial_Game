@@ -1,3 +1,7 @@
 ﻿{
-
+	"Inventory":null,
+	"Health":100,
+	"Damage":10,
+	"EquipedWeapon":null
+	
 }

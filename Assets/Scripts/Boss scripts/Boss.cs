@@ -52,4 +52,27 @@ public class Boss : MonoBehaviour, IDamageable
         Damage += factor;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            IDamageable player = collision.gameObject.GetComponent<IDamageable>();
+
+            player.TakeDamage(Damage);
+        }
+        else if (collision.gameObject.layer == 9)
+        {
+            if(collision.gameObject.tag == "Health")
+            {
+                Health health = collision.gameObject.GetComponent<Health>();
+                ChangeHealth(health.Factor);
+            }
+            else if (collision.gameObject.tag == "DamageBoost")
+            {
+                DamageBoost db = collision.gameObject.GetComponent<DamageBoost>();
+                ChangeDamage(db.Factor);
+            }
+        }
+    }
+
 }
