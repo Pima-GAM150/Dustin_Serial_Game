@@ -69,11 +69,8 @@ public class Player : Character , IDamageable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Weapon")
-        {
-            AddToInventory(collision.gameObject);
-        }
-        else if (collision.gameObject.layer == 9)
+        
+        if (collision.gameObject.layer == 9)
         {
             if (collision.gameObject.tag == "Health")
             {
