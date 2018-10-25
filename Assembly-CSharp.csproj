@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\DamageModifier.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\HealthModifier.cs" />
+    <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\DamageBoost.cs" />
@@ -72,11 +73,10 @@
     <Compile Include="Assets\Scripts\Items\PowerUps\PowerUp.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\SpeedBoost.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Ax.cs" />
-    <Compile Include="Assets\Scripts\Items\Weapons\Bow.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Weapon.cs" />
-    <Compile Include="Assets\Scripts\Manager\Manager.cs" />
+    <Compile Include="Assets\Scripts\Manager\ManagerS.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PickUpItem.cs" />
     <Compile Include="Assets\Scripts\Player scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PlayerAttack.cs" />

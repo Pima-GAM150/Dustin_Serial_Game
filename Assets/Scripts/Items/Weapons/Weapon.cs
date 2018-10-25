@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class Weapon : MonoBehaviour
+{
+    public float Damage;
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

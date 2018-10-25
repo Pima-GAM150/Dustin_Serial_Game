@@ -7,7 +7,8 @@ using System;
 [Serializable]
 public class BossStats
 {
-    public int Health;
-    public int Damage;
+    public float Health;
+    public float Damage;
+    public float MaxHealth;
 	
 }

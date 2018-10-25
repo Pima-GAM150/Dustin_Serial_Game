@@ -2,61 +2,92 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour , IDamageable
+public class Player : Character , IDamageable
 {
     [HideInInspector]public PlayerStats stats;
-    [HideInInspector]public static Player player;
 
-    private void Awake()
-    {
-        if (player == null)
-        {
-            player = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (player != this)
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public PlayerInventory Inventory;
-    public int Health;
-    public int Damage;
+    public GameObject EquipedWeapon;
 
+    [HideInInspector]ManagerS Manager;
 
-    public void TakeDamage(int damage)
+    private void Start()
+    {
+        LoadStats();
+    }
+
+    public void TakeDamage(float damage)
     {
         Health -= damage;
     }
 
-    public void LoadStats()
+    public void EquipWeapon(GameObject weapon)
     {
-        Inventory = stats.inventory;
-        Health = stats.Health;
-        Damage = stats.Damage;
+       // equip weapons here
     }
 
-    public void SaveStats()
+    public override void LoadStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+        stats = Manager.PlayerData;
+
+        Inventory = stats.inventory;
+        Health = stats.Health;
+        MaxHealth = stats.MaxHealth;
+        Damage = stats.Damage;
+        EquipedWeapon = stats.Weapon;
+    }
+
+    public override void SaveStats()
+    {
+        Manager = FindObjectOfType<ManagerS>();
+
         stats.inventory = Inventory;
         stats.Health = Health;
         stats.Damage = Damage;
+        stats.Weapon = EquipedWeapon;
+
+        Manager.PlayerData = stats;
     }
 
-    public void ChangeHealth(int factor)
+    public void ChangeSpeed(float factor)
     {
-        Health += factor;
+        PlayerController pc = FindObjectOfType<PlayerController>();
+
+        if(pc.Speed < 15)
+        {
+            pc.Speed += factor;
+        }
+        
     }
 
-    public void ChangeDamage(int factor)
-    {
-        Damage += factor;
-    }
-
-    public void AddToInventory(Weapon newWeapon)
+    public void AddToInventory(GameObject newWeapon)
     {
         Inventory.weapons.Add(newWeapon);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.layer == 9)
+        {
+            if (collision.gameObject.tag == "Health")
+            {
+                Health health = collision.gameObject.GetComponent<Health>();
+                ChangeHealth(health.Factor);
+            }
+            else if (collision.gameObject.tag == "DamageBoost")
+            {
+                DamageBoost db = collision.gameObject.GetComponent<DamageBoost>();
+                ChangeDamage(db.Factor);
+            }
+            else if (collision.gameObject.tag == "SpeedBoost")
+            {
+                SpeedBoost sb = collision.gameObject.GetComponent<SpeedBoost>();
+                ChangeSpeed(sb.Factor);
+            }
+        }
     }
 
 }

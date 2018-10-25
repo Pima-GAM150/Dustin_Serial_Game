@@ -2,15 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
+    public float Speed;
 
-	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+		if(Input.GetAxis("Horizontal")!=0)
+        {
+
+        }
+        if (Input.GetAxis("Vertical") != 0)
+        {
+
+        }
+        if (Input.GetAxis("Jump") != 0)
+        {
+            Jump();
+        }
+    }
+
+    void Jump()
+    {
+
+    }
 }

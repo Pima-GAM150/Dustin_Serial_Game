@@ -2,54 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour, IDamageable
+public class Boss : Character, IDamageable
 {
     [HideInInspector]public BossStats stats;
-    [HideInInspector] public static Boss boss;
+    [HideInInspector]ManagerS Manager;
 
-    private void Awake()
+    private void Start()
     {
-        if (boss == null)
-        {
-            boss = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (boss != this)
-        {
-            Destroy(gameObject);
-        }
-
-
+        LoadStats();
     }
 
-    public int Health;
-    public int Damage;
-
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         Health -= damage;
     }
 
-    public void LoadStats()
+    public override void LoadStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+        stats = Manager.BossData;
+
         Health = stats.Health;
         Damage = stats.Damage;
+        MaxHealth = stats.MaxHealth;
     }
 
-    public void SaveStats()
+    public override void SaveStats()
     {
+        Manager = FindObjectOfType<ManagerS>();
+
         stats.Health = Health;
         stats.Damage = Damage;
+
+        Manager.BossData = stats;
     }
 
-    public void ChangeHealth(int factor)
+    private void OnCollisionEnter(Collision collision)
     {
-        Health += factor;
-    }
-
-    public void ChangeDamage(int factor)
-    {
-        Damage += factor;
+        
+        if (collision.gameObject.layer == 9)
+        {
+            if(collision.gameObject.tag == "Health")
+            {
+                Health health = collision.gameObject.GetComponent<Health>();
+                ChangeHealth(health.Factor);
+            }
+            else if (collision.gameObject.tag == "DamageBoost")
+            {
+                DamageBoost db = collision.gameObject.GetComponent<DamageBoost>();
+                ChangeDamage(db.Factor);
+            }
+        }
     }
 
 }

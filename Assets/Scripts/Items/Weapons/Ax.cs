@@ -2,15 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ax : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class Ax : Weapon
+{
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
