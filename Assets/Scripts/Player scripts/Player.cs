@@ -23,6 +23,7 @@ public class Player : MonoBehaviour , IDamageable
     public PlayerInventory Inventory;
     public int Health;
     public int Damage;
+    [HideInInspector] public Weapon EquipedWeaopn;
 
 
     public void TakeDamage(int damage)
