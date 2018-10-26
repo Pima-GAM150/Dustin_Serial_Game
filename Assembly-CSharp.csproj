@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Items\Weapons\Card.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardDeck.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardLauncher.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\CardRotator.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardThrower.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Hammer.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />

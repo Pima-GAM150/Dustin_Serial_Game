@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    public float RotationSpeed = 5;
+    
     public float Speed = 5;
-    public float FlightTime = 2;
+    public float FlightTime = 3;
+    Vector3 initialDir;
 
     private IEnumerator Start()
     {
+        initialDir = this.transform.forward;
         while(true)
         {
             yield return new WaitForSeconds(FlightTime);
@@ -20,8 +22,7 @@ public class Card : MonoBehaviour
     }
     private void Update()
     {
-        transform.Rotate(Vector3.up, RotationSpeed);
-        transform.Translate();
+        transform.Translate(initialDir*Speed*Time.deltaTime,Space.World);
     }
     private void OnCollisionEnter(Collision collision)
     {

@@ -8,7 +8,7 @@ public class CardLauncher : MonoBehaviour
 
     public void ThrowCard()
     {
-        Instantiate(CardPrefab);
+        Instantiate(CardPrefab,this.transform.position,this.transform.rotation);
     }
 	
 }
