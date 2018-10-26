@@ -5,12 +5,14 @@ using UnityEngine;
 public class Player : Character , IDamageable
 {
     [HideInInspector]public PlayerStats stats;
-
+    [HideInInspector]public bool CardDeck;
+    [HideInInspector]ManagerS Manager;
 
     public PlayerInventory Inventory;
     public GameObject EquipedWeapon;
 
-    [HideInInspector]ManagerS Manager;
+    
+
 
     private void Start()
     {
@@ -64,7 +66,9 @@ public class Player : Character , IDamageable
 
     public void AddToInventory(GameObject newWeapon)
     {
-        Inventory.weapons.Add(newWeapon);
+       
+        
+
     }
 
     private void OnCollisionEnter(Collision collision)

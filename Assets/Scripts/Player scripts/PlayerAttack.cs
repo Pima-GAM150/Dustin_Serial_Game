@@ -4,6 +4,28 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public Animator AttackAnimation;
+    Player player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<Player>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            if(player.CardDeck)
+            {
+                AttackAnimation.SetTrigger("CardThrow");
+            }
+            else
+            {
+                AttackAnimation.SetTrigger("Melee");
+            }
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         Player player = FindObjectOfType<Player>();
@@ -11,8 +33,7 @@ public class PlayerAttack : MonoBehaviour
         {
             IDamageable boss = collision.gameObject.GetComponent<IDamageable>();
             Weapon w = player.EquipedWeapon.GetComponent<Weapon>();
-            float weaponModifier = w.Damage;
-            boss.TakeDamage(player.Damage + weaponModifier);
+            boss.TakeDamage(player.Damage + w.Damage);
         }
     }
 
