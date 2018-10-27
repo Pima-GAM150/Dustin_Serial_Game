@@ -27,11 +27,11 @@ public class Card : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Player player = FindObjectOfType<Player>();
-        if(collision.gameObject.tag == "Boss")
+        if(collision.gameObject.tag == "Boss" && player != null)
         {
             IDamageable boss = FindObjectOfType<Boss>();
             Weapon w = player.EquipedWeapon.GetComponent<Weapon>();
-            boss.TakeDamage(player.Damage + w.Damage);
+            boss.TakeDamage(player.Damage + ((w == null) ? 0 : w.Damage));
         }
         Destroy(this.gameObject);
     }

@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
         if (collision.gameObject.tag == "boss")
         {
             IDamageable boss = collision.gameObject.GetComponent<IDamageable>();
-            Weapon w = player.EquipedWeapon.GetComponent<Weapon>();
+            Weapon w = player.EquipedWeapon;
             boss.TakeDamage(player.Damage + w.Damage);
         }
     }

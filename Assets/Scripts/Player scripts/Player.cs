@@ -9,11 +9,9 @@ public class Player : Character , IDamageable
     [HideInInspector]ManagerS Manager;
 
     public PlayerInventory Inventory;
-    public GameObject EquipedWeapon;
-
+    public Weapon EquipedWeapon;
+    public List<GameObject> PossibleWeapons;
     
-
-
     private void Start()
     {
         LoadStats();
@@ -24,9 +22,29 @@ public class Player : Character , IDamageable
         Health -= damage;
     }
 
-    public void EquipWeapon(GameObject weapon)
+    public void EquipWeapon(Transform weapon)
     {
-       // equip weapons here
+        EquipedWeapon = weapon.GetComponent<Weapon>();
+
+        foreach(GameObject w in PossibleWeapons)
+        {
+            if(w.name == EquipedWeapon.name)
+            {
+                w.SetActive(true);
+                if(w.name == "CardDeck")
+                {
+                    CardDeck = true;
+                }
+                else
+                {
+                    CardDeck = false;
+                }
+            }
+            else
+            {
+                w.SetActive(false);
+            }
+        }
     }
 
     public override void LoadStats()
@@ -62,13 +80,6 @@ public class Player : Character , IDamageable
             pc.Speed += factor;
         }
         
-    }
-
-    public void AddToInventory(GameObject newWeapon)
-    {
-       
-        
-
     }
 
     private void OnCollisionEnter(Collision collision)

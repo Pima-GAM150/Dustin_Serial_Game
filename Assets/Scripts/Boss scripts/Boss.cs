@@ -14,7 +14,7 @@ public class Boss : Character, IDamageable
 
     public void TakeDamage(float damage)
     {
-        Health -= damage;
+        this.Health -= damage;
     }
 
     public override void LoadStats()

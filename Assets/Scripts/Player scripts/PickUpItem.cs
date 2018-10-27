@@ -8,9 +8,6 @@ public class PickUpItem : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Weapon")
-        {
-            player.AddToInventory(collision.gameObject);
-        }
+        
     }
 }

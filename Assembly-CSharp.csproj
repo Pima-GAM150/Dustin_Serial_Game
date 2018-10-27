@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Items\Weapons\CardLauncher.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardRotator.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardThrower.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\EmptyWeapon.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Hammer.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Weapon.cs" />
@@ -401,14 +402,14 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="ArmoryCrafterCore">
+      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Assets/Prefabs/Player/weapons/CrafterSeries/ArmoryCrafter/ArmoryCrafterCore.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/dbree/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/dbree/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="ArmoryCrafterCore">
-      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Assets/Prefabs/Player/weapons/CrafterSeries/ArmoryCrafter/ArmoryCrafterCore.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files (x86)/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
