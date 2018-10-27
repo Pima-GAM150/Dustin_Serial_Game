@@ -75,7 +75,13 @@
     <Compile Include="Assets\Scripts\Items\Spawning\PowerUpSpawn.cs" />
     <Compile Include="Assets\Scripts\Items\Spawning\WeaponSpawn.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Ax.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\Card.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\CardDeck.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\CardLauncher.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\CardRotator.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\CardThrower.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\EmptyWeapon.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons\Hammer.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Sword.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Manager\ManagerS.cs" />
@@ -142,6 +148,7 @@
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Fog.shader" />
+    <None Include="Assets\Prefabs\Player\weapons\CrafterSeries\ArmoryCrafter\Reminder.txt" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\LutGen.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
@@ -150,20 +157,24 @@
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\ACES.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+    <None Include="Assets\Prefabs\Player\weapons\CrafterSeries\ArmoryCrafter\Dependencies\ArmoryCrafterShader.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Blit.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+    <None Include="Assets\Prefabs\Player\weapons\CrafterSeries\ArmoryCrafter\Dependencies\EditorSettings.txt" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\FXAA3.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\MotionBlur.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\Prefabs\Player\weapons\CrafterSeries\ArmoryCrafter\Dependencies\ArmoryCrafterTextureShader.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Common.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\UI\Trackball.shader" />
+    <None Include="Assets\Prefabs\Player\weapons\CrafterSeries\ArmoryCrafter\Changelog.txt" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Bloom.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\TAA.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
@@ -175,6 +186,7 @@
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\Prefabs\Player\weapons\CrafterSeries\ArmoryCrafter\Dependencies\UI\Font\Anton\OFL.txt" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
     <None Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
@@ -389,6 +401,9 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="ArmoryCrafterCore">
+      <HintPath>C:/Users/dbree/Desktop/Dustin/college/fall 2018/Game 150/repositories/Dustin_Serial_Game/Assets/Prefabs/Player/weapons/CrafterSeries/ArmoryCrafter/ArmoryCrafterCore.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/dbree/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

@@ -1,0 +1,6 @@
+Armory Crafter - Editor Settings
+Version: {1.1} (FREE VERSION)
+
+Default Weapons: {3}
+Parts type: {1} {1} {1}
+Custom Weapons: {0}

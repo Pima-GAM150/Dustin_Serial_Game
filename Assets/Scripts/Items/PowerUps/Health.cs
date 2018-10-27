@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Health : PowerUp
 {
-    
+    private void Start()
+    {
+        StartCoroutine(Disapear());
+    }
 }

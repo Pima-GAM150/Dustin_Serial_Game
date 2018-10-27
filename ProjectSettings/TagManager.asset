@@ -4,9 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Boss
   - Weapon
   - PowerUp
+  - Ax
+  - Sword
+  - Hammer
+  - CardDeck
+  - Boss
+  - Damage
+  - Health
+  - MaxHealth
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX

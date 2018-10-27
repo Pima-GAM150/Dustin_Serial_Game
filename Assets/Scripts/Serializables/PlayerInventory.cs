@@ -7,5 +7,5 @@ using System;
 [Serializable]
 public class PlayerInventory
 {
-    public List<GameObject> weapons; 
+    public List<bool> weapons;
 }

@@ -5,13 +5,17 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour {
 
     public int Factor;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public int LifeSpan;
+
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
+    public IEnumerator Disapear()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(LifeSpan);
+
+            Destroy(this.gameObject);
+        }
+    }
 }
