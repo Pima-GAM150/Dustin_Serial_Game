@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Boss
   - Weapon
   - PowerUp
+  - Ax
+  - Sword
+  - Hammer
+  - CardDeck
+  - Boss
   layers:
   - Default
   - TransparentFX

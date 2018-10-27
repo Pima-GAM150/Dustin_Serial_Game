@@ -5,13 +5,11 @@ using UnityEngine;
 public class Player : Character , IDamageable
 {
     [HideInInspector]public PlayerStats stats;
-
-
-    public PlayerInventory Inventory;
-    public GameObject EquipedWeapon;
-
+    [HideInInspector]public bool CardDeck;
     [HideInInspector]ManagerS Manager;
-
+    
+    public Weapon EquipedWeapon;
+    
     private void Start()
     {
         LoadStats();
@@ -22,17 +20,27 @@ public class Player : Character , IDamageable
         Health -= damage;
     }
 
-    public void EquipWeapon(GameObject weapon)
+    public void EquipWeapon(Transform weapon)
     {
-       // equip weapons here
+        EquipedWeapon = weapon.GetComponent<Weapon>();
+
+        if (EquipedWeapon.gameObject.name == "CardDeck")
+        {
+            CardDeck = true;
+        }
+        else
+        {
+            CardDeck = false;
+        }
+
+
     }
 
     public override void LoadStats()
     {
         Manager = FindObjectOfType<ManagerS>();
         stats = Manager.PlayerData;
-
-        Inventory = stats.inventory;
+        
         Health = stats.Health;
         MaxHealth = stats.MaxHealth;
         Damage = stats.Damage;
@@ -42,11 +50,11 @@ public class Player : Character , IDamageable
     public override void SaveStats()
     {
         Manager = FindObjectOfType<ManagerS>();
-
-        stats.inventory = Inventory;
+        
         stats.Health = Health;
         stats.Damage = Damage;
         stats.Weapon = EquipedWeapon;
+        stats.MaxHealth = MaxHealth;
 
         Manager.PlayerData = stats;
     }
@@ -62,17 +70,12 @@ public class Player : Character , IDamageable
         
     }
 
-    public void AddToInventory(GameObject newWeapon)
-    {
-        Inventory.weapons.Add(newWeapon);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         
         if (collision.gameObject.layer == 9)
         {
-            if (collision.gameObject.tag == "Health")
+            if (collision.gameObject.tag == "HealthRestore")
             {
                 Health health = collision.gameObject.GetComponent<Health>();
                 ChangeHealth(health.Factor);
@@ -86,6 +89,11 @@ public class Player : Character , IDamageable
             {
                 SpeedBoost sb = collision.gameObject.GetComponent<SpeedBoost>();
                 ChangeSpeed(sb.Factor);
+            }
+            else if(collision.gameObject.tag == "MaxHealth")
+            {
+                Health health = collision.gameObject.GetComponent<Health>();
+                ChangeMaxHealth(health.Factor);
             }
         }
     }

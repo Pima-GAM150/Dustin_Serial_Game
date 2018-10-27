@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class SwitchWeapon : MonoBehaviour
 {
-    List<GameObject> weapons;
+    public int SelectedWeapon = 0;
     Player player;
 
     private void Start()
     {
         player = FindObjectOfType<Player>();
-        weapons = player.Inventory.weapons;
+        SwitchEquipedWeapon();
     }
+
     private void Update()
     {
-        if (Input.GetAxis("Fire3") == 1 && weapons.Capacity > 1)
+        int PrevWeapon = SelectedWeapon;
+
+        if (Input.GetButtonDown("Fire3"))
+        {
+            if (SelectedWeapon >= transform.childCount - 1) 
+            {
+                SelectedWeapon = 0;
+            }
+            else
+            {
+                SelectedWeapon++;
+            }
+        }
+        if(SelectedWeapon!=PrevWeapon)
         {
             SwitchEquipedWeapon();
         }
@@ -22,14 +36,19 @@ public class SwitchWeapon : MonoBehaviour
 
     private void SwitchEquipedWeapon()
     {
-        for (int i = 0; i < weapons.Capacity; i++)
+        int i = 0;
+        foreach(Transform weapon in transform)
         {
-            GameObject w = player.Inventory.weapons[i];
-            if (player.EquipedWeapon == w)
+            if(i == SelectedWeapon)
             {
-                player.EquipedWeapon = player.Inventory.weapons[i + 1];
-                return;
+                weapon.gameObject.SetActive(true);
+                player.EquipWeapon(weapon);
             }
+            else
+            {
+                weapon.gameObject.SetActive(false);
+            }
+            i++;
         }
     }
 }
