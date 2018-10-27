@@ -14,7 +14,7 @@ public class Boss : Character, IDamageable
 
     public void TakeDamage(float damage)
     {
-        Health -= damage;
+        this.Health -= damage;
     }
 
     public override void LoadStats()
@@ -47,10 +47,15 @@ public class Boss : Character, IDamageable
                 Health health = collision.gameObject.GetComponent<Health>();
                 ChangeHealth(health.Factor);
             }
-            else if (collision.gameObject.tag == "DamageBoost")
+            else if (collision.gameObject.tag == "Damage")
             {
                 DamageBoost db = collision.gameObject.GetComponent<DamageBoost>();
                 ChangeDamage(db.Factor);
+            }
+            else if (collision.gameObject.tag == "MaxHealth")
+            {
+                Health health = collision.gameObject.GetComponent<Health>();
+                ChangeMaxHealth(health.Factor);
             }
         }
     }

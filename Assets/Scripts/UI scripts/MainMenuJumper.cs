@@ -7,6 +7,8 @@ public class MainMenuJumper : MonoBehaviour
 {
     public void JumpToMainMenu()
     {
+        Time.timeScale = 1;
+
         ManagerS manager = FindObjectOfType<ManagerS>();
 
         manager.SaveStats();

@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public Animator AttackAnimation;
+    Player player;
+
+    private void Start()
     {
-        Player player = FindObjectOfType<Player>();
-        if (collision.gameObject.tag == "boss")
-        {
-            IDamageable boss = collision.gameObject.GetComponent<IDamageable>();
-            Weapon w = player.EquipedWeapon.GetComponent<Weapon>();
-            float weaponModifier = w.Damage;
-            boss.TakeDamage(player.Damage + weaponModifier);
-        }
+        player = FindObjectOfType<Player>();
     }
 
+    private void Update()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            if(player.CardDeck)
+            {
+                AttackAnimation.SetTrigger("CardThrow");
+            }
+            else
+            {
+                AttackAnimation.SetTrigger("Melee");
+            }
+        }
+    }
 }

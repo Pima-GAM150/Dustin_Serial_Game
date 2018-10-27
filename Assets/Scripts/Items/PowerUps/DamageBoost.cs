@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DamageBoost : PowerUp
 {
+    private void Start()
+    {
+        StartCoroutine(Disapear());
+    }
 
-    
 }

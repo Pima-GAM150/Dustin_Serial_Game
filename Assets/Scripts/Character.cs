@@ -13,4 +13,5 @@ public class Character : MonoBehaviour
 
     public void ChangeHealth(float factor) { Health += factor; }
     public void ChangeDamage(float factor) { Damage += factor; }
+    public void ChangeMaxHealth(float factor) { MaxHealth += factor; }
 }
