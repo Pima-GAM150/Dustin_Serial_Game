@@ -9,6 +9,7 @@ public class Player : Character , IDamageable
     [HideInInspector]ManagerS Manager;
     
     public Weapon EquipedWeapon;
+    string HeldWeapon;
     
     private void Start()
     {
@@ -44,7 +45,7 @@ public class Player : Character , IDamageable
         Health = stats.Health;
         MaxHealth = stats.MaxHealth;
         Damage = stats.Damage;
-        EquipedWeapon = stats.Weapon;
+        HeldWeapon = stats.Weapon;
     }
 
     public override void SaveStats()
@@ -53,7 +54,7 @@ public class Player : Character , IDamageable
         
         stats.Health = Health;
         stats.Damage = Damage;
-        stats.Weapon = EquipedWeapon;
+        stats.Weapon = EquipedWeapon.name;
         stats.MaxHealth = MaxHealth;
 
         Manager.PlayerData = stats;
@@ -75,12 +76,12 @@ public class Player : Character , IDamageable
         
         if (collision.gameObject.layer == 9)
         {
-            if (collision.gameObject.tag == "HealthRestore")
+            if (collision.gameObject.tag == "Health")
             {
                 Health health = collision.gameObject.GetComponent<Health>();
                 ChangeHealth(health.Factor);
             }
-            else if (collision.gameObject.tag == "DamageBoost")
+            else if (collision.gameObject.tag == "Damage")
             {
                 DamageBoost db = collision.gameObject.GetComponent<DamageBoost>();
                 ChangeDamage(db.Factor);

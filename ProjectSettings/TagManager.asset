@@ -11,6 +11,10 @@ TagManager:
   - Hammer
   - CardDeck
   - Boss
+  - Damage
+  - Health
+  - MaxHealth
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX

@@ -18,16 +18,17 @@ public class Card : MonoBehaviour
 
             Destroy(this.gameObject);
         }
-        
     }
+
     private void Update()
     {
         transform.Translate(initialDir*Speed*Time.deltaTime,Space.World);
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
         Player player = FindObjectOfType<Player>();
-        if(collision.gameObject.tag == "Boss" && player != null)
+        if (other.gameObject.tag == "Boss" && player != null)
         {
             IDamageable boss = FindObjectOfType<Boss>();
             Weapon w = player.EquipedWeapon.GetComponent<Weapon>();
@@ -35,5 +36,4 @@ public class Card : MonoBehaviour
         }
         Destroy(this.gameObject);
     }
-
 }

@@ -26,15 +26,4 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Player player = FindObjectOfType<Player>();
-        if (collision.gameObject.tag == "boss")
-        {
-            IDamageable boss = collision.gameObject.GetComponent<IDamageable>();
-            Weapon w = player.EquipedWeapon;
-            boss.TakeDamage(player.Damage + w.Damage);
-        }
-    }
-
 }

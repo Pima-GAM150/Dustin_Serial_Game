@@ -7,9 +7,8 @@ using System;
 [Serializable]
 public class PlayerStats
 {
-    public List<GameObject> PossibleWeapons;
     public float Health;
     public float MaxHealth;
     public float Damage;
-    public Weapon Weapon;
+    public string Weapon;
 }

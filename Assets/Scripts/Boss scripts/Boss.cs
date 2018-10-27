@@ -42,12 +42,12 @@ public class Boss : Character, IDamageable
         
         if (collision.gameObject.layer == 9)
         {
-            if(collision.gameObject.tag == "HealthRestore")
+            if(collision.gameObject.tag == "Health")
             {
                 Health health = collision.gameObject.GetComponent<Health>();
                 ChangeHealth(health.Factor);
             }
-            else if (collision.gameObject.tag == "DamageBoost")
+            else if (collision.gameObject.tag == "Damage")
             {
                 DamageBoost db = collision.gameObject.GetComponent<DamageBoost>();
                 ChangeDamage(db.Factor);

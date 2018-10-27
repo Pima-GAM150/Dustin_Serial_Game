@@ -29,7 +29,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1503370782436286
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1627071923897884
 GameObject:
   m_ObjectHideFlags: 1
@@ -120,7 +120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1761143839815870
 GameObject:
   m_ObjectHideFlags: 1
@@ -179,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4013673995806574
 Transform:
   m_ObjectHideFlags: 1
@@ -199,8 +199,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849855321983780}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 239.092, y: 1.82, z: 71}
+  m_LocalRotation: {x: 0.000009182439, y: 0.0000057269667, z: -0.0000007985526, w: 1}
+  m_LocalPosition: {x: 239.09201, y: 2.000006, z: 71.00009}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4563315580833680}
@@ -298,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523148202872148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.40899658, y: 0.5360001, z: 0.1230011}
+  m_LocalPosition: {x: 0.40899658, y: 0.5360001, z: 0.288}
   m_LocalScale: {x: 0.08, y: 0.1, z: 0.8}
   m_Children:
   - {fileID: 4687488230137320}
@@ -839,22 +839,12 @@ MonoBehaviour:
   MaxHealth: 100
   Damage: 10
   stats:
-    inventory:
-      weapons: 
-    Health: 0
-    MaxHealth: 0
-    Damage: 0
+    Health: 100
+    MaxHealth: 100
+    Damage: 10
     Weapon: {fileID: 0}
   CardDeck: 0
-  Inventory:
-    weapons: 00000000
-  EquipedWeapon: {fileID: 0}
-  PossibleWeapons:
-  - {fileID: 1867451724031134}
-  - {fileID: 1550458436083938}
-  - {fileID: 1250958910628710}
-  - {fileID: 1729751991118202}
-  - {fileID: 1761143839815870}
+  EquipedWeapon: {fileID: 114388348080218676}
 --- !u!114 &114842111510693174
 MonoBehaviour:
   m_ObjectHideFlags: 1

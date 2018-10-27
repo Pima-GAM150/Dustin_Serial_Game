@@ -5,6 +5,9 @@ using UnityEngine;
 public class SpeedBoost : PowerUp
 {
 
-
+    private void Start()
+    {
+        StartCoroutine(Disapear());
+    }
 }
 
