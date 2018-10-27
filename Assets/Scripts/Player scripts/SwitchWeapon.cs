@@ -12,6 +12,7 @@ public class SwitchWeapon : MonoBehaviour
         player = FindObjectOfType<Player>();
         SwitchEquipedWeapon();
     }
+
     private void Update()
     {
         int PrevWeapon = SelectedWeapon;
