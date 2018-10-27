@@ -5,12 +5,12 @@ using UnityEngine;
 public class BossAttack : MonoBehaviour
 {
     Boss boss;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             boss = FindObjectOfType<Boss>();
-            IDamageable player = collision.gameObject.GetComponent<IDamageable>();
+            IDamageable player = other.gameObject.GetComponent<IDamageable>();
 
             player.TakeDamage(boss.Damage);
         }

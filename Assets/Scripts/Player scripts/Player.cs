@@ -33,8 +33,30 @@ public class Player : Character , IDamageable
         {
             CardDeck = false;
         }
-
-
+    }
+    public void EquipWeapon(string weapon)
+    {
+        Weapon[] HeldWeapons = FindObjectsOfType<Weapon>();
+        foreach (Weapon w in HeldWeapons)
+        {
+            if(w.gameObject.name == weapon)
+            {
+                w.gameObject.SetActive(true);
+                EquipedWeapon = w;
+                if (w.gameObject.name == "CardDeck")
+                {
+                    CardDeck = true;
+                }
+                else
+                {
+                    CardDeck = false;
+                }
+            }
+            else
+            {
+                w.gameObject.SetActive(false);
+            }
+        }
     }
 
     public override void LoadStats()
@@ -46,16 +68,19 @@ public class Player : Character , IDamageable
         MaxHealth = stats.MaxHealth;
         Damage = stats.Damage;
         HeldWeapon = stats.Weapon;
+        EquipWeapon(HeldWeapon);
     }
 
     public override void SaveStats()
     {
         Manager = FindObjectOfType<ManagerS>();
+
+        HeldWeapon = EquipedWeapon.name;
         
         stats.Health = Health;
         stats.Damage = Damage;
-        stats.Weapon = EquipedWeapon.name;
         stats.MaxHealth = MaxHealth;
+        stats.Weapon = HeldWeapon;
 
         Manager.PlayerData = stats;
     }
