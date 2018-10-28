@@ -6,6 +6,7 @@ public class Boss : Character, IDamageable
 {
     [HideInInspector]public BossStats stats;
     [HideInInspector]ManagerS Manager;
+    
 
     private void Start()
     {
