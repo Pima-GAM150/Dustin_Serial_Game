@@ -18,10 +18,10 @@ public class PowerUpSpawn : MonoBehaviour
         {
             yield return new WaitForSeconds(SpawnSpeed);
 
-            Instantiate(Health, new Vector3(Random.Range(50, 450),10, Random.Range(50, 450)), Quaternion.identity);
-            Instantiate(Damage, new Vector3(Random.Range(50, 450), 10, Random.Range(50, 450)), Quaternion.identity);
-            Instantiate(MaxHealth, new Vector3(Random.Range(50, 450), 10, Random.Range(50, 450)), Quaternion.identity);
-            Instantiate(SpeedBoost, new Vector3(Random.Range(50, 450), 10, Random.Range(50, 450)), Quaternion.identity);
+            Instantiate(Health, new Vector3(Random.Range(50, 450), 1.5f, Random.Range(50, 450)), Quaternion.identity);
+            Instantiate(Damage, new Vector3(Random.Range(50, 450), 1.5f, Random.Range(50, 450)), Quaternion.identity);
+            Instantiate(MaxHealth, new Vector3(Random.Range(50, 450), 1.5f, Random.Range(50, 450)), Quaternion.identity);
+            Instantiate(SpeedBoost, new Vector3(Random.Range(50, 450), 1.5f, Random.Range(50, 450)), Quaternion.identity);
         }
     }
 }

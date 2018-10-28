@@ -29,7 +29,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1503370782436286
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1627071923897884
 GameObject:
   m_ObjectHideFlags: 1
@@ -120,7 +120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1761143839815870
 GameObject:
   m_ObjectHideFlags: 1
@@ -179,7 +179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4013673995806574
 Transform:
   m_ObjectHideFlags: 1
@@ -199,8 +199,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849855321983780}
-  m_LocalRotation: {x: 0.000009182439, y: 0.0000057269667, z: -0.0000007985526, w: 1}
-  m_LocalPosition: {x: 239.09201, y: 2.000006, z: 71.00009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 239.092, y: 1.82, z: 71}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4563315580833680}
@@ -608,7 +608,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -685,7 +685,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849855321983780}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 0.5}
@@ -842,7 +842,7 @@ MonoBehaviour:
     Health: 100
     MaxHealth: 100
     Damage: 10
-    Weapon: {fileID: 0}
+    Weapon: 2
   CardDeck: 0
   EquipedWeapon: {fileID: 114388348080218676}
 --- !u!114 &114842111510693174

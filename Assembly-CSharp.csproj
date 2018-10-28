@@ -61,10 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Boss scripts\AI.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
-    <Compile Include="Assets\Scripts\Boss scripts\DamageModifier.cs" />
-    <Compile Include="Assets\Scripts\Boss scripts\HealthModifier.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\Naviation.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
