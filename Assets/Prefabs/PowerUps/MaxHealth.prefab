@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114127667543526516}
   m_Layer: 9
   m_Name: MaxHealth
-  m_TagString: Untagged
+  m_TagString: MaxHealth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1787770480367874}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
