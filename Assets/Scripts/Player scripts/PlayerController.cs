@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
 	
 	void Update ()
     {
-		if(Input.GetAxis("Horizontal")!=0)
+		if(Input.GetAxisRaw("Horizontal")!=0)
         {
-
+            this.transform.Rotate(Vector3.up, 2 * Speed * Time.deltaTime * Input.GetAxis("Horizontal"));
         }
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxisRaw("Vertical") != 0)
         {
-
+            this.transform.Translate(Vector3.forward*Speed*Time.deltaTime*Input.GetAxis("Vertical"), Space.Self);
         }
         if (Input.GetAxis("Jump") != 0)
         {
@@ -29,6 +29,6 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-
+        Vector3.Lerp(this.transform.position,this.transform.position + (Vector3.up * Speed ), 2);
     }
 }
