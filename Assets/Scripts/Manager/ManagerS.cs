@@ -6,7 +6,7 @@ public class ManagerS : MonoBehaviour
 {
     public static ManagerS Manager = null;
     /*[HideInInspector]*/public PlayerStats PlayerData;
-    [HideInInspector]public BossStats BossData;
+    /*[HideInInspector]*/public BossStats BossData;
 
     private void Awake()
     {
