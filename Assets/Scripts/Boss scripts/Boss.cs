@@ -6,10 +6,12 @@ public class Boss : Character, IDamageable
 {
     [HideInInspector]public BossStats stats;
     [HideInInspector]ManagerS Manager;
+    public static Boss BossS;
     
 
     private void Start()
     {
+        BossS = this;
         LoadStats();
     }
 
@@ -22,7 +24,7 @@ public class Boss : Character, IDamageable
     {
         Manager = FindObjectOfType<ManagerS>();
         stats = Manager.BossData;
-
+        Debug.Log("Loading Boss Stats");
         Health = stats.Health;
         Damage = stats.Damage;
         MaxHealth = stats.MaxHealth;

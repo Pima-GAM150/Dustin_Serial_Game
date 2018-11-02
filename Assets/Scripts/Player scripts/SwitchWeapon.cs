@@ -5,13 +5,6 @@ using UnityEngine;
 public class SwitchWeapon : MonoBehaviour
 {
     public int SelectedWeapon = 0;
-    Player player;
-
-    private void Start()
-    {
-        player = FindObjectOfType<Player>();
-        SwitchEquipedWeapon();
-    }
 
     private void Update()
     {
@@ -28,7 +21,7 @@ public class SwitchWeapon : MonoBehaviour
                 SelectedWeapon++;
             }
         }
-        if(SelectedWeapon!=PrevWeapon)
+        if(SelectedWeapon != PrevWeapon)
         {
             SwitchEquipedWeapon();
         }
@@ -42,7 +35,7 @@ public class SwitchWeapon : MonoBehaviour
             if(i == SelectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
-                player.EquipWeapon(weapon);
+                Player.PlayerS.EquipWeapon(weapon);
             }
             else
             {

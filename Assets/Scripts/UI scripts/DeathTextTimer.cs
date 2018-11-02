@@ -10,6 +10,7 @@ public class DeathTextTimer : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
         counter = 0;
     }
 

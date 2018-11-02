@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(Vector3.up * 20 * Speed);
+        rb.AddForce(Vector3.up * 20 * Speed,ForceMode.Impulse);
     }
 
     bool IsGrounded ()

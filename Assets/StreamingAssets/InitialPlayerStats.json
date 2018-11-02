@@ -1,1 +1,1 @@
-﻿{"PossibleWeapons":[{"instanceID":-956410},{"instanceID":-1254},{"instanceID":-1262},{"instanceID":-1258},{"instanceID":-1266}],"Health":100.0,"MaxHealth":100.0,"Damage":10.0,"Weapon":{"instanceID":-996592}}
+﻿{"Health":100.0,"MaxHealth":100.0,"Damage":10.0,"Weapon":"EmptyWeapon"}

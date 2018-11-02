@@ -857,6 +857,12 @@ MonoBehaviour:
     Weapon: 2
   CardDeck: 0
   EquipedWeapon: {fileID: 114842111510693174}
+  possibleWeapons:
+  - {fileID: 114388348080218676}
+  - {fileID: 114250214745755542}
+  - {fileID: 114702166719209320}
+  - {fileID: 114842111510693174}
+  - {fileID: 114318991135591500}
 --- !u!114 &114842111510693174
 MonoBehaviour:
   m_ObjectHideFlags: 1

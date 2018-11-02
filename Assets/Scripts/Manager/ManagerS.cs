@@ -23,31 +23,28 @@ public class ManagerS : MonoBehaviour
 
     public void SaveStats()
     {
-        Player player = FindObjectOfType<Player>();
-        Boss boss = FindObjectOfType<Boss>();
+        
 
 
-        if (player != null && boss != null)
+        if (Player.PlayerS != null && Boss.BossS != null)
         {
-            player.SaveStats();
-            boss.SaveStats();
-            PlayerData = player.stats;
-            BossData = boss.stats;
+            Player.PlayerS.SaveStats();
+            Boss.BossS.SaveStats();
+            PlayerData = Player.PlayerS.stats;
+            BossData = Boss.BossS.stats;
         }
     }
 
     public void LoadStats()
     {
-        Player player = FindObjectOfType<Player>();
-        Boss boss = FindObjectOfType<Boss>();
-
-        if (player != null && boss != null)
+        
+        if ( Player.PlayerS != null && Boss.BossS != null)
         {
-            player.stats = PlayerData;
-            boss.stats = BossData;
+            Player.PlayerS.stats = PlayerData;
+            Boss.BossS.stats = BossData;
 
-            player.LoadStats();
-            boss.LoadStats();
+            Player.PlayerS.LoadStats();
+            Boss.BossS.LoadStats();
         }
     }
 
