@@ -37,6 +37,7 @@ public class Player : Character , IDamageable
     public void EquipWeapon(string weapon)
     {
         Weapon[] HeldWeapons = FindObjectsOfType<Weapon>();
+
         foreach (Weapon w in HeldWeapons)
         {
             if(w.gameObject.name == weapon)

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/BattleField.unity
+- path: Assets/Scenes/WinningEnding.unity
   isLoaded: 1
   isActive: 1
