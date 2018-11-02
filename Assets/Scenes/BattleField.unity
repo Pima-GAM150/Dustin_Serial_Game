@@ -249,7 +249,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4309698882008140, guid: 30e46ef1ddce79f4aa97e8e01375dd15, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4309698882008140, guid: 30e46ef1ddce79f4aa97e8e01375dd15, type: 2}
       propertyPath: m_LocalRotation.z
@@ -257,26 +257,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4309698882008140, guid: 30e46ef1ddce79f4aa97e8e01375dd15, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4309698882008140, guid: 30e46ef1ddce79f4aa97e8e01375dd15, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114635651454972198, guid: 30e46ef1ddce79f4aa97e8e01375dd15,
-        type: 2}
-      propertyPath: ThePlayer
-      value: 
-      objectReference: {fileID: 1080539139}
     - target: {fileID: 114435495901183154, guid: 30e46ef1ddce79f4aa97e8e01375dd15,
         type: 2}
       propertyPath: HealthBar
       value: 
       objectReference: {fileID: 1890355920}
-    - target: {fileID: 1585444415595326, guid: 30e46ef1ddce79f4aa97e8e01375dd15, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114635651454972198, guid: 30e46ef1ddce79f4aa97e8e01375dd15,
+        type: 2}
+      propertyPath: ThePlayer
+      value: 
+      objectReference: {fileID: 1080539139}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30e46ef1ddce79f4aa97e8e01375dd15, type: 2}
   m_IsPrefabAsset: 0

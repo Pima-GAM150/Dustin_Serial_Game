@@ -154,6 +154,7 @@ GameObject:
   - component: {fileID: 114311582240291986}
   - component: {fileID: 114965348797033976}
   - component: {fileID: 114658029077933898}
+  - component: {fileID: 114570484512020412}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -787,6 +788,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectedWeapon: 0
+--- !u!114 &114570484512020412
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849855321983780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdd673fbdfe406409168aff589c9918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114658029077933898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -844,7 +856,7 @@ MonoBehaviour:
     Damage: 10
     Weapon: 2
   CardDeck: 0
-  EquipedWeapon: {fileID: 114388348080218676}
+  EquipedWeapon: {fileID: 114842111510693174}
 --- !u!114 &114842111510693174
 MonoBehaviour:
   m_ObjectHideFlags: 1

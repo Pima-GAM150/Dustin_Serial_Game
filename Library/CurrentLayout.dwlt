@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 74
+  controlID: 56
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 75
+  controlID: 57
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 463}
   m_MaxSize: {x: 4002, y: 12063}
   vertical: 1
-  controlID: 76
+  controlID: 58
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 113
+  controlID: 119
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 52114
+  m_LastSelectedObjectID: -303060
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -473,14 +473,14 @@ MonoBehaviour:
     height: 366
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 16997.01888346783
+  lastFramingTime: 15743.834917531152
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 240.53, y: 2.0099354, z: 73.59}
+    m_Target: {x: 16.407276, y: 0.42739183, z: 27.95281}
     speed: 2
-    m_Value: {x: 240.53, y: 2.0099354, z: 73.59}
+    m_Value: {x: 16.407276, y: 0.42739183, z: 27.95281}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -508,13 +508,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.5704463, y: -0.26919836, z: 0.2052037, w: -0.7483414}
+    m_Target: {x: 0.03152911, y: -0.75660956, z: 0.036583886, w: 0.652081}
     speed: 2
-    m_Value: {x: -0.5704463, y: -0.26919836, z: 0.2052037, w: -0.7483414}
+    m_Value: {x: 0.03152911, y: -0.75660956, z: 0.036583886, w: 0.652081}
   m_Size:
-    m_Target: 8.083317
+    m_Target: 22
     speed: 2
-    m_Value: 8.083317
+    m_Value: 22
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Debug
+    m_Text: Inspector
     m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 
@@ -745,28 +745,28 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1acd0000
-    m_LastClickedID: 52506
-    m_ExpandedIDs: 48ccd8ff3831d9ffaac1d9ff548adaff7801e5ff0afbffff0efbffff12fbffff16fbffff1afbffff46fbffff4afbffffe6fbfffff4ffffff00000000a8bd00000ec8000040c8000078c800008ac800003acc00006ccc0000b6cc0000
+    m_SelectedIDs: 2c60fbff
+    m_LastClickedID: -303060
+    m_ExpandedIDs: 745ffbffa65ffbff2e60fbff1aa1fbff88d3fbff66f3fcffc6fdfdff74dcfeffaa5effff18fbffff46fbffff4afbffffd2fbffff00000000103b00006e560000a4560000705b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Manager
+      m_OriginalName: Manager
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -303060
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 13}
     m_SearchString: 
   m_ExpandedScenes:
-  - Octagon
+  - BattleField
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -833,34 +833,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Player/weapons
+    - Assets/Scripts/Player scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Prefabs/Player/weapons
+  - Assets/Scripts/Player scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\dbree\Desktop\Dustin\college\fall 2018\Game 150\repositories\Dustin_Serial_Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fa310000
-    m_LastClickedID: 12794
-    m_ExpandedIDs: 00000000082b0000c82b0000142c0000342c0000602c0000a42c0000d22d0000d82d00006e2e0000802e0000322f0000622f00003a3000006030000084310000fa3100002c32000052320000763200000033000042330000ea330000dc3400000a3500001239000014390000
+    scrollPos: {x: 0, y: 111}
+    m_SelectedIDs: ea320000
+    m_LastClickedID: 13034
+    m_ExpandedIDs: 00000000122b0000d22b00001e2c00003e2c00006a2c0000ae2c0000dc2d0000e22d00007c2e00008e2e00003e2f0000402f0000702f00004a30000070300000943100000a3200003c3200006232000086320000163300005833000002340000f4340000223500004c3900004e390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Animations
+      m_OriginalName: Animations
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 12024
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 14}
     m_SearchString: 
@@ -874,7 +874,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000082b0000c82b0000142c0000342c0000602c0000a42c0000d22d00006e2e0000802e0000322f0000622f00003a3000006030000084310000fa3100002c32000052320000763200000033000042330000ea330000dc3400000a3500001239000014390000
+    m_ExpandedIDs: 00000000122b0000d22b00001e2c00003e2c00006a2c0000ae2c0000dc2d0000e22d00007c2e00008e2e0000402f0000702f00004a30000070300000943100000a3200003c3200006232000086320000163300005833000002340000f4340000223500004c3900004e390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -902,7 +902,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300007c28000010280000422a0000000000006c310000b02d0000fa2c00007a310000162b0000f62b0000581bf9ff7c2f0000
+    m_ExpandedInstanceIDs: c62300007c28000010280000422a00006c310000b02d0000fa2c00007a310000162b0000f62b0000581bf9ff7c2f000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -928,4 +928,4 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 96
-  m_DirectoriesAreaWidth: 110
+  m_DirectoriesAreaWidth: 111

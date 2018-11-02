@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Boss scripts\AI.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
+    <Compile Include="Assets\Scripts\Boss scripts\BossDeath.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\Naviation.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
@@ -88,10 +89,12 @@
     <Compile Include="Assets\Scripts\Player scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\Player scripts\SwitchWeapon.cs" />
     <Compile Include="Assets\Scripts\Serializables\BossStats.cs" />
     <Compile Include="Assets\Scripts\Serializables\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Serializables\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\DeathTextTimer.cs" />
     <Compile Include="Assets\Scripts\UI scripts\HealthBarUpdater.cs" />
     <Compile Include="Assets\Scripts\UI scripts\MainMenuJumper.cs" />
     <Compile Include="Assets\Scripts\UI scripts\MenuOnButtonPress.cs" />
@@ -99,6 +102,7 @@
     <Compile Include="Assets\Scripts\UI scripts\SaveAndQuit.cs" />
     <Compile Include="Assets\Scripts\UI scripts\Starter.cs" />
     <Compile Include="Assets\Scripts\UI scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\UI scripts\WinTextTimer.cs" />
     <Compile Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\TerrainStuffs\GreenForest\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />

@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     public virtual void SaveStats() { }
     public virtual void LoadStats() { }
 
-    public void ChangeHealth(float factor) { Health += factor; }
+    public void ChangeHealth(float factor) { Health += factor; if (Health > MaxHealth) { Health = MaxHealth; } }
     public void ChangeDamage(float factor) { Damage += factor; }
     public void ChangeMaxHealth(float factor) { MaxHealth += factor; }
 }
