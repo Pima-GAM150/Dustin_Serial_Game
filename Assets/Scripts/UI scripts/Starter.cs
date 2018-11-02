@@ -19,5 +19,8 @@ public class Starter : MonoBehaviour
         LoadGame();
 
         SceneManager.LoadScene(1);
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 }

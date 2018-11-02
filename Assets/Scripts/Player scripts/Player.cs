@@ -7,12 +7,17 @@ public class Player : Character , IDamageable
     [HideInInspector]public PlayerStats stats;
     [HideInInspector]public bool CardDeck;
     [HideInInspector]ManagerS Manager;
+    public static Player PlayerS;
     
     public Weapon EquipedWeapon;
+
+    public List<Weapon> possibleWeapons;
+
     string HeldWeapon;
     
     private void Start()
     {
+        PlayerS = this;
         LoadStats();
     }
 
@@ -25,6 +30,8 @@ public class Player : Character , IDamageable
     {
         EquipedWeapon = weapon.GetComponent<Weapon>();
 
+        Debug.Log("Equiping Weapon" + weapon.name);
+
         if (EquipedWeapon.gameObject.name == "CardDeck")
         {
             CardDeck = true;
@@ -36,15 +43,20 @@ public class Player : Character , IDamageable
     }
     public void EquipWeapon(string weapon)
     {
-        Weapon[] HeldWeapons = FindObjectsOfType<Weapon>();
+        Debug.Log(weapon);
 
-        foreach (Weapon w in HeldWeapons)
+        foreach (Weapon w in possibleWeapons)
         {
-            if(w.gameObject.name == weapon)
+            Debug.Log("considering " + w.name);
+
+            if(w.name == weapon)
             {
+                Debug.Log("choosing" + w.name);
+
                 w.gameObject.SetActive(true);
                 EquipedWeapon = w;
-                if (w.gameObject.name == "CardDeck")
+
+                if (w.name == "CardDeck")
                 {
                     CardDeck = true;
                 }
@@ -64,7 +76,9 @@ public class Player : Character , IDamageable
     {
         Manager = FindObjectOfType<ManagerS>();
         stats = Manager.PlayerData;
-        
+
+        Debug.Log("loading Player Stats");
+
         Health = stats.Health;
         MaxHealth = stats.MaxHealth;
         Damage = stats.Damage;

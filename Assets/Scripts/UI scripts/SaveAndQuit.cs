@@ -45,6 +45,8 @@ public class SaveAndQuit : MonoBehaviour
 
         Manager.PlayerData = JsonUtility.FromJson<PlayerStats>(playerJson);
         Manager.BossData = JsonUtility.FromJson<BossStats>(bossJson);
+
+
         
     }
 
