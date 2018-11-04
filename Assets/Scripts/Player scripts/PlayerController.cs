@@ -7,14 +7,13 @@ public class PlayerController : MonoBehaviour
     public float Speed;
 
     Rigidbody rb;
-    BoxCollider box;
 
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
-        box = this.GetComponent<BoxCollider>();
     }
-    void Update ()
+
+    private void Update ()
     {
 		if(Input.GetAxisRaw("Horizontal")!=0)
         {

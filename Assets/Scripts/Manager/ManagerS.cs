@@ -5,8 +5,8 @@ using UnityEngine;
 public class ManagerS : MonoBehaviour
 {
     public static ManagerS Manager = null;
-    /*[HideInInspector]*/public PlayerStats PlayerData;
-    /*[HideInInspector]*/public BossStats BossData;
+    public PlayerStats PlayerData;
+    public BossStats BossData;
 
     private void Awake()
     {
@@ -47,7 +47,4 @@ public class ManagerS : MonoBehaviour
             Boss.BossS.LoadStats();
         }
     }
-
-    
-
 }

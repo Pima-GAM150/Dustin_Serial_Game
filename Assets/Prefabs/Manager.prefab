@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4342460490874962}
   - component: {fileID: 114791137897222546}
+  - component: {fileID: 114624292317355708}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -40,6 +41,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114624292317355708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281926740801558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404e334996ef7be4ba673340da6824a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114791137897222546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,12 +64,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerData:
-    inventory:
-      weapons: []
     Health: 100
     MaxHealth: 100
     Damage: 10
-    Weapon: {fileID: 0}
+    Weapon: 0
   BossData:
     Health: 100
     Damage: 10

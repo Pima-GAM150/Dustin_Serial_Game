@@ -64,9 +64,12 @@
     <Compile Include="Assets\Scripts\Boss scripts\AI.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\BossAttack.cs" />
-    <Compile Include="Assets\Scripts\Boss scripts\BossDeath.cs" />
     <Compile Include="Assets\Scripts\Boss scripts\Naviation.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
+    <Compile Include="Assets\Scripts\DelegatesEvents\BossDeath.cs" />
+    <Compile Include="Assets\Scripts\DelegatesEvents\DeathDelegaate.cs" />
+    <Compile Include="Assets\Scripts\DelegatesEvents\DeathListener.cs" />
+    <Compile Include="Assets\Scripts\DelegatesEvents\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\Destroyables\Destroyables.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Items\PowerUps\DamageBoost.cs" />
@@ -89,7 +92,6 @@
     <Compile Include="Assets\Scripts\Player scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Player scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Player scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\Player scripts\SwitchWeapon.cs" />
     <Compile Include="Assets\Scripts\Serializables\BossStats.cs" />
     <Compile Include="Assets\Scripts\Serializables\PlayerInventory.cs" />
