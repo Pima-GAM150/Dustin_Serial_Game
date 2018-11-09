@@ -15,13 +15,19 @@ public class SaveAndQuit : MonoBehaviour
     public void Save()
     {
         Manager = FindObjectOfType<ManagerS>();
+
         string bossJson = string.Empty, playerJson = string.Empty;
+
         if(Manager!=null)
         {
             Manager.SaveStats();
 
             playerJson = JsonUtility.ToJson(Manager.PlayerData);
             bossJson = JsonUtility.ToJson(Manager.BossData);
+        }
+        else
+        {
+            return;
         }
 
         PathForSavedPlayer = Application.streamingAssetsPath + "/SavedPlayerStats.json";
